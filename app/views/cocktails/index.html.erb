@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Mister Cocktail</h1>
+      <ul class="list-group">
+        <% @cocktails.each do |cocktail| %>
+          <li class="list-group-item">
+            <%= link_to cocktail.name, cocktail_path(cocktail) %>
+
+            <i class="fa fa-trash-o" aria-hidden="true"></i>
+            <%= link_to "destroy", cocktail_path(cocktail.id), method: :delete %>
+          </li>
+        <% end %>
+        <br>
+      </ul>
+      <%= link_to "Add a new Cocktail", new_cocktail_path, class: 'btn btn-primary' %>
+
+    </div>
+  </div>
+</div>
